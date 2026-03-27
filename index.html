@@ -5,18 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jarmark GymCheb</title>
     <style>
-        :root { --primary: #0055a4; --accent: #ffcc00; --bg: #f4f7f9; }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #333; text-align: center; }
+        /* Definice barev */
+        :root { 
+            --primary: #0055a4; /* Modrá GymCheb */
+            --accent: #2e8b57;  /* Jarní zelená pro nadpis */
+            --bg-base: #f4f7f9; /* Základní podkladová barva */
+            --text-dark: #333;
+        }
+
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            color: var(--text-dark); 
+            text-align: center;
+            
+            /* NASTAVENÍ JARNÍHO POZADÍ */
+            background-color: var(--bg-base); /* Záložní barva */
+            background-image: url('pozadi.png'); /* Cesta k obrázku */
+            background-repeat: repeat; /* Obrázek se opakuje po celé ploše */
+            background-size: 300px; /* Velikost vzoru (můžete upravit) */
+            background-attachment: fixed; /* Pozadí se nehýbe při rolování */
+        }
+
         .header { padding: 30px 0; }
-        h1 { color: var(--primary); font-size: 1.8rem; margin-bottom: 10px; }
+
+        h1 { 
+            color: var(--accent); /* Změna barvy nadpisu na jarní zelenou */
+            font-size: 2rem; 
+            margin-bottom: 10px; 
+            text-shadow: 1px 1px 2px white; /* Jemný stín pro lepší čitelnost */
+        }
+        
+        h1 span { color: #ff69b4; } /* Růžová pro emodži */
+
         .menu-grid { display: grid; gap: 15px; max-width: 400px; margin: 20px auto; }
+        
         .menu-item { 
-            background: white; padding: 20px; border-radius: 15px; 
-            text-decoration: none; color: #333; font-weight: bold;
-            display: flex; align-items: center; justify-content: space-between;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid var(--primary);
+            background: white; /* Bílá pro kontrast */
+            padding: 20px; 
+            border-radius: 15px; 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: bold;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            border-left: 5px solid var(--primary); /* Modrý okraj GymCheb */
             transition: transform 0.2s;
         }
+        
+        /* Poloprůhlednost pro menu, aby jarní vzor prosvítal */
+        .menu-item { background: rgba(255, 255, 255, 0.9); } 
+
         .menu-item:active { transform: scale(0.98); background: #f0f0f0; }
         .icon { font-size: 24px; }
     </style>
@@ -24,33 +66,34 @@
 <body>
 
 <div class="header">
-    <h1>Jarní jarmark GymCheb</h1>
+    <h1><span>🌸</span> Jarní jarmark GymCheb</h1>
     <p>Vyberte si sekci, která vás zajímá:</p>
 </div>
 
 <div class="menu-grid">
+    
     <a href="olympiady.html" class="menu-item">
         <span>Úspěchy v olympiádách</span>
         <span class="icon">➡️</span>
     </a>
-    
+
     <a href="akce.html" class="menu-item">
         <span>Školní akce</span>
         <span class="icon">➡️</span>
     </a> 
-    
+
     <a href="https://www.facebook.com/GymnaziumCheb" target="_blank" class="menu-item" style="border-left-color: #1877F2;">
         <span>Facebook školy</span>
         <span class="icon">➡️</span>
     </a>
 
-    <a href="https://www.instagram.com/gymnaziumcheb_oficialni/" target="_blank" class="menu-item" style="border-left-color: #1877F2;">
+    <a href="https://www.instagram.com/gymnaziumcheb_oficialni/" target="_blank" class="menu-item" style="border-left-color: #E4405F;">
         <span>Instagram školy</span>
         <span class="icon">➡️</span>
     </a>
 </div>
 
-<footer style="margin-top: 50px; font-size: 12px; color: #888;">
+<footer style="margin-top: 50px; font-size: 12px; color: #888; background: rgba(244, 247, 249, 0.8); padding: 10px; border-radius: 10px;">
     &copy; 2026 Gymnázium Cheb
 </footer>
 
